@@ -40,5 +40,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {ChangeLog,README}.gz
-%attr(755,root,root) %{_bindir}/vacation 
+%attr(755,root,root) %{_bindir}/vacation
 %{_mandir}/man1/vacation.1.gz
