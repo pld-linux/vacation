@@ -1,12 +1,11 @@
 Summary:	Automatic mail answering program for Linux
 Summary(pl):	Autoresponder
 Name:		vacation
-Version:	1.2.6
+Version:	1.2.6.1
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Source0:	http://freesoftware.fsf.org/download/vacation/%{name}-%{version}.tar.gz
-URL:		http://www.freesoftware.fsf.org/vacation/
+Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -18,27 +17,39 @@ Vacation to port programu vacation z 386BSD (programu automatycznie
 odpowiadaj±cego na pocztê) na Linuksa.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
-rm -f vacation
 %{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5}}
 
-%{__make} install \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man
+install vacation ${RPM_BUILD_ROOT}%{_bindir}/vacation
+install vaclook ${RPM_BUILD_ROOT}%{_bindir}/vaclook
+install vacation.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vacation.1
+install vaclook.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vaclook.1
 
-gzip -9nf ChangeLog README
+gzip -9nf ChangeLog README README.smrsh
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -d /etc/smrsh ]; then
+  ln -sf %{_bindir}/vacation /etc/smrsh
+fi
+
+%postun
+if [ -e /etc/smrsh/vacation ]; then
+  rm -f /etc/smrsh/vacation
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README}.gz
+%doc {ChangeLog,README,README.smrsh}.gz
 %attr(755,root,root) %{_bindir}/vacation
+%attr(755,root,root) %{_bindir}/vaclook
 %{_mandir}/man1/vacation.1.gz
+%{_mandir}/man1/vaclook.1.gz
