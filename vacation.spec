@@ -5,7 +5,7 @@ Version:	1.2.6.1
 Release:	3
 License:	GPL
 Group:		Applications/Mail
-Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://unc.dl.sourceforge.net/sourceforge/vacation/%{name}-%{version}.tar.gz
 Patch0:		%{name}-reply-to.patch
 BuildRequires:	gdbm-devel
 Conflicts:	zmailer
