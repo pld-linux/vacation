@@ -2,10 +2,11 @@ Summary:	Automatic mail answering program for Linux
 Summary(pl):	Autoresponder pocztowy dla Linuksa
 Name:		vacation
 Version:	1.2.6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Mail
 Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Patch0:		%{name}-reply-to.patch
 BuildRequires:	gdbm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,6 +20,7 @@ odpowiadaj±cego na pocztê) na Linuksa.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 %{__make} CFLAGS="%{rpmcflags}"
