@@ -5,9 +5,6 @@ Version:	1.2.1
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Group(de):	Applikationen/Post
-Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
 Source0:	http://www.tcob1.uklinux.net/files/%{name}-%{version}.tar.bz2
 URL:		http://www.tcob1.uklinux.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
