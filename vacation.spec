@@ -1,4 +1,5 @@
 Summary:	Automatic mail answering program for Linux
+Summary(pl):	Autoresponder
 Name:		vacation
 Version:	1.2.1
 Release:	1
@@ -17,7 +18,7 @@ mail-answering program found on many Unix systems) to Linux.
 
 %build
 rm -f vacation
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -27,16 +28,13 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5}}
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/vacation
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	ChangeLog README vacation-1.2.1.lsm
+gzip -9nf ChangeLog README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README,vacation-1.2.1.lsm}.gz
+%doc {ChangeLog,README}.gz
 %attr(755,root,root) %{_bindir}/vacation 
 %{_mandir}/man1/vacation.1.gz
