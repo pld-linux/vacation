@@ -2,7 +2,7 @@ Summary:	Automatic mail answering program for Linux
 Summary(pl):	Autoresponder pocztowy dla Linuksa
 Name:		vacation
 Version:	1.2.6.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Mail
 Source0:	http://unc.dl.sourceforge.net/sourceforge/vacation/%{name}-%{version}.tar.gz
