@@ -5,13 +5,20 @@ Version:	1.2.1
 Release:	1
 License:	GPL
 Group:		Applications/Mail
+Group(de):	Applikationen/Post
+Group(pl):	Aplikacje/Poczta
+Group(pt):	Aplicações/Correio Eletrônico
+Source0:	http://www.tcob1.uklinux.net/files/%{name}-%{version}.tar.bz2
 URL:		http://www.tcob1.uklinux.net/
-Source:		http://www.tcob1.uklinux.net/files/%{name}-%{version}.tar.bz2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Vacation is a port of the 386BSD vacation program (an automatic
 mail-answering program found on many Unix systems) to Linux.
+
+%description -l pl
+Vacation to port programu vacation z 386BSD (programu automatycznie
+odpowiadaj±cego na pocztê) na Linuksa.
 
 %prep
 %setup -q
