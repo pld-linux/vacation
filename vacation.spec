@@ -1,12 +1,12 @@
 Summary:	Automatic mail answering program for Linux
 Summary(pl):	Autoresponder
 Name:		vacation
-Version:	1.2.1
+Version:	1.2.6
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Source0:	http://www.tcob1.uklinux.net/files/%{name}-%{version}.tar.bz2
-URL:		http://www.tcob1.uklinux.net/
+Source0:	http://freesoftware.fsf.org/download/vacation/%{name}-%{version}.tar.gz
+URL:		http://www.freesoftware.fsf.org/vacation/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
