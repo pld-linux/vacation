@@ -1,12 +1,12 @@
 Summary:	Automatic mail answering program for Linux
-Summary(pl):	Autoresponder pocztowy dla linuxa
+Summary(pl):	Autoresponder pocztowy dla Linuksa
 Name:		vacation
 Version:	1.2.6.1
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-BuildRequires:	gdbm-devel
 Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+BuildRequires:	gdbm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,8 +32,6 @@ install vaclook ${RPM_BUILD_ROOT}%{_bindir}/vaclook
 install vacation.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vacation.1
 install vaclook.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vaclook.1
 
-gzip -9nf ChangeLog README README.smrsh
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -49,7 +47,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README,README.smrsh}.gz
+%doc ChangeLog README README.smrsh
 %attr(755,root,root) %{_bindir}/vacation
 %attr(755,root,root) %{_bindir}/vaclook
 %{_mandir}/man1/vacation.1.gz
