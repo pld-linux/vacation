@@ -1,0 +1,23 @@
+diff -ur vacation.orig/vacation.c vacation/vacation.c
+--- vacation.orig/vacation.c	Tue Aug 14 14:07:12 2001
++++ vacation/vacation.c	Wed Jul  3 17:56:02 2002
+@@ -308,9 +308,16 @@
+     case 'R':		/* "Reply-To: " */
+       cont = 0;
+       if (!strncasecmp(buf, "Reply-To:", 9)) { /* much simpler than From: */
+-	for (p = buf + 10; *p && *p != ' '; ++p);
+-	*p = '\0';
+-	(void)strcpy(replyto, buf + 10);
++       if ((p = index(buf, '>'))) {          /* address in <> ? */
++            *p = '\0';                        /* let string end here */
++            p = index(buf, '<') + 1;          /* and start copy here */
++	}
++	else {                              /* address isolated */
++	    for (p = buf + 10; *p && *p != ' '; ++p);
++	    *p = '\0';
++	    p = buf + 10;
++	}
++	(void)strcpy(replyto, p);
+ 	if ((p = index(replyto, '\n')))
+ 	  *p = '\0';
+ #ifdef DEBUG
