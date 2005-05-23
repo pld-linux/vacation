@@ -5,7 +5,7 @@ Version:	1.2.6.1
 Release:	6
 License:	GPL
 Group:		Applications/Mail
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/vacation/%{name}-%{version}.tar.gz
 # Source0-md5:	0c14379b8fa09bea1a6a264330c7bd11
 Patch0:		%{name}-reply-to.patch
 BuildRequires:	gdbm-devel
@@ -25,15 +25,16 @@ odpowiadaj±cego na pocztê) na Linuksa.
 %patch0 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,5}}
 
-install vacation vaclook ${RPM_BUILD_ROOT}%{_bindir}
-install vacation.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vacation.1
-install vaclook.man ${RPM_BUILD_ROOT}%{_mandir}/man1/vaclook.1
+install vacation vaclook $RPM_BUILD_ROOT%{_bindir}
+install vacation.man $RPM_BUILD_ROOT%{_mandir}/man1/vacation.1
+install vaclook.man $RPM_BUILD_ROOT%{_mandir}/man1/vaclook.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
