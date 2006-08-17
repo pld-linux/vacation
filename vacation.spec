@@ -53,6 +53,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README README.smrsh
+%doc AUTHORS ChangeLog README README.smrsh TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
