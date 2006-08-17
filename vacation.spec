@@ -8,6 +8,7 @@ Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/vacation/%{name}-%{version}.tar.gz
 # Source0-md5:	0c14379b8fa09bea1a6a264330c7bd11
 Patch0:		%{name}-reply-to.patch
+URL:		http://vacation.sourceforge.net/
 BuildRequires:	gdbm-devel
 Conflicts:	zmailer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,6 +27,7 @@ odpowiadaj±cego na pocztê) na Linuksa.
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
 
 %install
