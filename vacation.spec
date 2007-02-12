@@ -1,5 +1,5 @@
 Summary:	Automatic mail answering program for Linux
-Summary(pl.UTF-8):   Autoresponder pocztowy dla Linuksa
+Summary(pl.UTF-8):	Autoresponder pocztowy dla Linuksa
 Name:		vacation
 Version:	1.2.6.1
 Release:	6
