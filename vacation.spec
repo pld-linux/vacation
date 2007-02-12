@@ -1,5 +1,5 @@
 Summary:	Automatic mail answering program for Linux
-Summary(pl):	Autoresponder pocztowy dla Linuksa
+Summary(pl.UTF-8):   Autoresponder pocztowy dla Linuksa
 Name:		vacation
 Version:	1.2.6.1
 Release:	6
@@ -17,9 +17,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vacation is a port of the 386BSD vacation program (an automatic
 mail-answering program found on many Unix systems) to Linux.
 
-%description -l pl
+%description -l pl.UTF-8
 Vacation to port programu vacation z 386BSD (programu automatycznie
-odpowiadaj±cego na pocztê) na Linuksa.
+odpowiadajÄ…cego na pocztÄ™) na Linuksa.
 
 %prep
 %setup -q -n %{name}
