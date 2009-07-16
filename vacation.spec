@@ -1,13 +1,12 @@
 Summary:	Automatic mail answering program for Linux
 Summary(pl.UTF-8):	Autoresponder pocztowy dla Linuksa
 Name:		vacation
-Version:	1.2.6.4
+Version:	1.2.7.0
 Release:	1
 License:	GPL
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/vacation/%{name}-%{version}.tar.gz
-# Source0-md5:	e7845c62ac998d7c411e655c0ecf73f5
-Patch0:		%{name}-reply-to.patch
+# Source0-md5:	cae9253eee4c2e68af01bc6b1f469cd2
 URL:		http://vacation.sourceforge.net/
 BuildRequires:	gdbm-devel
 Conflicts:	zmailer
@@ -23,12 +22,11 @@ odpowiadającego na pocztę) na Linuksa.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+	RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -53,6 +51,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README README.smrsh TODO
+%doc AUTHORS ChangeLog KNOWN_BUGS README README.smrsh TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
