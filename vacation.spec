@@ -5,7 +5,7 @@ Version:	1.2.7.1
 Release:	1
 License:	GPL
 Group:		Applications/Mail
-Source0:	http://dl.sourceforge.net/vacation/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/vacation/%{name}-%{version}.tar.gz
 # Source0-md5:	272df506a542c9c587de43b3f531a5ed
 URL:		http://vacation.sourceforge.net/
 BuildRequires:	gdbm-devel
